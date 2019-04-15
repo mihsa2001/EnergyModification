@@ -6,10 +6,15 @@ import cofh.redstoneflux.impl.EnergyStorage;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
 
-public class BlockEnergyHandlerTail extends TileEntity implements IEnergyReceiver, IEnergyProvider {
+/**
+ * @author mikhail
+ * block energy handler tail
+ */
+public class BlockEnergyHandlerTail extends TileEntity implements IEnergyReceiver, IEnergyProvider, ITickable {
 
-    protected EnergyStorage storage = new EnergyStorage(32000);
+    protected EnergyStorage storage = new EnergyStorage(32000, 1000, 1000);
 
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
@@ -57,6 +62,16 @@ public class BlockEnergyHandlerTail extends TileEntity implements IEnergyReceive
     public int getMaxEnergyStored(EnumFacing from) {
 
         return storage.getMaxEnergyStored();
+    }
+
+    @Override
+    public void update() {
+        TileEntity f = this.world.getTileEntity(this.pos.up());
+        if (f instanceof IEnergyReceiver) {
+            IEnergyReceiver UpEntity = ((IEnergyReceiver) f);
+            this.storage.extractEnergy(UpEntity.receiveEnergy(EnumFacing.DOWN, this.storage.extractEnergy(this.storage.getMaxExtract(), true), false), false);
+        }
+
     }
 
 }

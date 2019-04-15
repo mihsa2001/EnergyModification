@@ -14,6 +14,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.mkdata.energymod.Block.BlockEnergyHandler;
 
+/**
+ * @author mikhail
+ * proxy register for BlockEnergyGandler
+ */
 public class BlockEnergyHandlerRegister {
 
     public static final Block

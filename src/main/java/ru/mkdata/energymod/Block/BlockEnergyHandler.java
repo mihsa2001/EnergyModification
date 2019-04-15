@@ -9,8 +9,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
-import ru.mkdata.energymod.Block.Tail.BlockEnergyHandlerTail;
 import ru.mkdata.energymod.Block.Entity.BlockTileEntity;
+import ru.mkdata.energymod.Block.Tail.BlockEnergyHandlerTail;
 import ru.mkdata.energymod.EnergyMod;
 
 public class BlockEnergyHandler extends BlockTileEntity<BlockEnergyHandlerTail> {
@@ -21,7 +21,6 @@ public class BlockEnergyHandler extends BlockTileEntity<BlockEnergyHandlerTail> 
         this.setCreativeTab(EnergyMod.tabENERGY);
         //this.setHarvestLevel("pickaxe", 3);
     }
-
     @Override
     public boolean onBlockActivated(World world, BlockPos position, IBlockState blockState, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
 

@@ -12,6 +12,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ru.mkdata.energymod.proxy.CommonProxy;
 
+/**
+ * @author mikhail
+ * main class of modification
+ */
 @Mod(modid = EnergyMod.MODID, name = EnergyMod.NAME, version = EnergyMod.VERSION)
 public class EnergyMod
 {
@@ -23,14 +27,12 @@ public class EnergyMod
     public static CreativeTabs tabENERGY = new EnergyModTab();
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
+    public void init(FMLInitializationEvent event) {
         proxy.init(event);
     }
 
@@ -39,8 +41,7 @@ public class EnergyMod
     }
 
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
+    public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit(event);
     }
 }
