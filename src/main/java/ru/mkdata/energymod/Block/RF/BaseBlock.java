@@ -1,4 +1,4 @@
-package ru.mkdata.energymod.Block;
+package ru.mkdata.energymod.Block.RF;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;

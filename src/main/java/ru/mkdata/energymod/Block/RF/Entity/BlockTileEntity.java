@@ -1,4 +1,4 @@
-package ru.mkdata.energymod.Block.Entity;
+package ru.mkdata.energymod.Block.RF.Entity;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import ru.mkdata.energymod.Block.BaseBlock;
+import ru.mkdata.energymod.Block.RF.BaseBlock;
 
 import javax.annotation.Nullable;
 

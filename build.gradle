@@ -30,6 +30,16 @@ repositories {
 dependencies {
     deobfCompile "cofh:RedstoneFlux:1.12-2.0.2.3:universal"
 }
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+
+dependencies {
+    compile name: 'industrialcraft-2-2.8.76-ex112-api'
+}
 
 minecraft {
     version = "1.12.2-14.23.3.2655"
