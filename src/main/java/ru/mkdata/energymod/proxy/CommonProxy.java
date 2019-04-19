@@ -3,7 +3,7 @@ package ru.mkdata.energymod.proxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import ru.mkdata.energymod.Block.RF.Register.BlockEnergyHandlerRegister;
+import ru.mkdata.energymod.Block.Register.BlockEnergyHandlerRegister;
 
 public class CommonProxy
 {
