@@ -17,7 +17,7 @@ import java.util.List;
  * block energy handler tail
  */
 public class BlockEnergyHandlerTail extends TileEntity implements IEnergyReceiver, IEnergyProvider, ITickable {
-
+    //TODO переписать взмимодействие с RF используя setEnergyStored из {@link EnergyStorage}
     protected EEnergyStorage storage = new EEnergyStorage(30000);
 
     @Override
@@ -67,7 +67,6 @@ public class BlockEnergyHandlerTail extends TileEntity implements IEnergyReceive
 
     @Override
     public void update() {
-        //TODO Привести в порядок
         List<TileEntity> tileEntityList = new ArrayList<>();
         tileEntityList.add(this.world.getTileEntity(this.pos.up()));
         tileEntityList.add(this.world.getTileEntity(this.pos.down()));
@@ -79,8 +78,10 @@ public class BlockEnergyHandlerTail extends TileEntity implements IEnergyReceive
             if (ent instanceof IEnergyStorage) {
                 IEnergyStorage UpEntity = ((IEnergyStorage) ent);
                 if (this.storage.getEnergyStored() > 0) {
+                    int may_receive = UpEntity.getCapacity() - UpEntity.getStored();
+                    if (may_receive > this.storage.getEnergyStored()) may_receive = this.storage.getEnergyStored();
                     UpEntity.addEnergy(this.storage.getEnergyStored());
-                    this.storage.extractEnergy(this.storage.getEnergyStored(), false);
+                    this.storage.extractEnergy(may_receive, false);
                 }
 
             }
